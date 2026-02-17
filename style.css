@@ -1,0 +1,1433 @@
+/* =========================================
+   1. REGISTRO DE FUENTES Y CLASES
+   ========================================= */
+@font-face {
+    font-family: 'BrittanySignature';
+    src: url('BrittanySignature.ttf') format('truetype'),
+         url('Brittany.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Forzamos todo lo cursivo a Brittany */
+.font-brittany,
+.font-alex, 
+.mix-bottom, 
+.main-name,
+.signature,
+.mag-header p,
+.mag-std p,
+.section-title,
+.rsvp-title,
+.elegant-footer-note { 
+    font-family: 'BrittanySignature', cursive !important; 
+    font-weight: 400; 
+    line-height: 1.5; 
+}
+
+.font-poppins {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.font-tenor { font-family: 'Tenor Sans', sans-serif; letter-spacing: 1px; }
+
+/* Evitar cortes de texto */
+p, h1, h2, h3, span {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+/* =========================================
+   2. ESTILOS GENERALES
+   ========================================= */
+:root {
+    --bg-cream: #f3ece8;
+    --green-forest: #a7b3a7;
+    --green-dark: #d8bfb3;
+    --brown-gold: #67323c;
+    --text-dark: #67323c;
+    --wax-red: #67323c;
+}
+
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow-x: hidden; }
+
+/* Títulos "Encimados" */
+.section-header-clean {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    margin-bottom: 30px; text-align: center;
+}
+.mix-top {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.9rem; letter-spacing: 4px;
+    margin-bottom: 25px; 
+    color: var(--brown-gold);
+    text-transform: uppercase;
+}
+.mix-bottom {
+    font-size: 3rem; /* Tamaño grande para Brittany */
+    color: var(--brown-gold);
+    z-index: 1;
+    position: relative;
+    line-height: 1.2;
+}
+
+/* =========================================
+   3. CARTA DE INICIO (PANTALLA COMPLETA)
+   ========================================= */
+.envelope-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background: #000; z-index: 9999;
+    display: flex; justify-content: center; align-items: center;
+    cursor: pointer; transition: transform 1s ease-in-out; overflow: hidden;
+}
+.envelope-bg-img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.tap-text-overlay {
+    position: absolute; bottom: 50px; color: white;
+    font-family: 'Poppins', sans-serif; font-size: 0.9rem;
+    letter-spacing: 2px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    animation: pulse 2s infinite; pointer-events: none;
+}
+.envelope-overlay.opened { transform: translateY(-100%); }
+
+/* SECCIONES PRINCIPALES */
+.hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; background: url('portada.jpg') center/cover no-repeat; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.3); }
+.names-container { position: relative; z-index: 2; padding: 20px; width: 100%; padding-top: 450px; }
+.main-name { font-size: 6rem; color: white; line-height: 1.2; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
+.location-top { color: white; font-size: 0.8rem; letter-spacing: 4px; margin-top: 20px; text-transform: uppercase; }
+
+/* PADRES */
+.parents-section { background: var(--green-forest); color: white; padding: 80px 20px; text-align: center; }
+.parents-section .mix-top, .parents-section .mix-bottom { color: white !important; }
+.intro-phrase { font-size: 1rem; margin-bottom: 60px; color: white; line-height: 1.5; font-weight: 300; }
+.parents-cards-layout { display: flex; flex-direction: column; align-items: center; gap: 30px; margin-top: 30px; }
+.parent-card { background: rgba(255,255,255,0.1); padding: 20px 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; width: 100%; max-width: 400px; }
+.parent-card p { font-size: 1rem; margin: 5px 0; text-transform: uppercase; letter-spacing: 1px; }
+.decorative-line { width: 1px; height: 50px; background: rgba(255,255,255,0.3); }
+.parent-label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; opacity: 0.8; }
+
+/* PADRINOS */
+.godparents-slider-section { padding: 100px 20px; background: #fdfbf9; overflow: hidden; }
+.swiper { width: 100%; max-width: 600px; padding: 30px 50px 50px 50px !important; }
+.swiper-slide { background: white; border-radius: 10px; box-shadow: 0 15px 35px rgba(0,0,0,0.06); display: flex; justify-content: center; align-items: center; height: 320px; }
+.gp-slide-card { text-align: center; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; width: 100%; }
+.gp-slide-role { font-family: 'Tenor Sans', sans-serif; font-size: 0.7rem; letter-spacing: 3px; color: var(--brown-gold); text-transform: uppercase; font-weight: 600; }
+.gp-slide-line { width: 50px; height: 1px; background: var(--green-forest); opacity: 0.3; margin: 20px 0 25px 0; }
+.gp-slide-name { font-size: 1.2rem; color: var(--green-dark); margin: 0; line-height: 1.4; font-weight: 400; }
+.swiper-button-next, .swiper-button-prev { color: var(--brown-gold) !important; transform: scale(0.6); font-weight: bold; }
+.swiper-pagination-bullet-active { background: var(--green-forest) !important; }
+
+/* SAVE THE DATE */
+.magazine-counter { margin-top: 80px; margin-bottom: 40px; background: url('foto3.jpg') center/cover no-repeat fixed; position: relative; padding: 80px 0; display: flex; justify-content: center; align-items: center; }
+.magazine-counter::before { display: none; }
+.relative-box { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.93); width: 90%; max-width: 450px; padding: 40px 20px; border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); text-align: center; }
+.mag-header p { font-size: 3rem !important; color: var(--brown-gold); margin: 0; line-height: 1.6; padding-bottom: 15px; display: block; }
+.mag-date-display { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 15px 0; width: 100%; }
+.mag-day { font-size: 4.5rem; line-height: 1; color: var(--green-forest); }
+.mag-vertical-line { width: 2px; height: 60px; background: var(--brown-gold); opacity: 0.6; }
+.mag-month-year { display: flex; flex-direction: column; text-align: left; justify-content: center; }
+.mag-month-year span:nth-child(1) { font-size: 1.2rem; color: var(--green-dark); letter-spacing: 2px; line-height: 1; }
+.mag-month-year span:nth-child(2) { font-size: 1rem; color: var(--brown-gold); letter-spacing: 4px; margin-top: 5px; }
+.mag-std p { font-size: 3rem !important; color: var(--green-forest); margin: 10px 0 30px 0; line-height: 1.6; padding-bottom: 15px; position: relative; transform: translateX(-15px); }
+.mag-timer { display: flex; justify-content: center; gap: 15px; width: 100%; flex-wrap: wrap; }
+.time-col span { display: block; font-size: 1.5rem; line-height: 1; color: var(--text-dark); font-weight: 500; }
+.time-col small { font-size: 0.6rem; letter-spacing: 1px; opacity: 0.6; color: var(--text-dark); margin-top: 5px; display: block; }
+
+/* HISTORIA */
+.story-fixed-section { position: relative; padding: 100px 20px; display: flex; justify-content: center; }
+.fixed-bg { position: absolute; inset: 0; background-attachment: fixed; background-size: cover; z-index: -1; }
+.story-content { background: white; padding: 60px 40px; max-width: 500px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.1); width: 100%; }
+.story-est { font-size: 0.8rem; letter-spacing: 3px; display: block; margin: 10px 0 20px; color: var(--brown-gold); }
+.story-text { font-size: 0.8rem; line-height: 1.6; color: #555; }
+.signature { font-size: 1.5rem; color: var(--brown-gold); margin-top: 30px; line-height: 1.5; }
+
+/* ITINERARIO */
+.itinerary-section { padding: 80px 0; background: white; }
+.timeline-container { position: relative; max-width: 500px; margin: 0 auto 60px; text-align: center; width: 100%; }
+.timeline-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: #d6d6d6; transform: translateX(-50%); z-index: 0; }
+.timeline-item { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; margin-bottom: 50px; }
+.tl-time { background: white; padding: 5px 15px; font-size: 0.9rem; color: var(--brown-gold); letter-spacing: 1px; margin-bottom: 5px; display: inline-block; position: relative; z-index: 2; }
+.tl-dot { width: 12px; height: 12px; background: white; border: 2px solid var(--green-forest); border-radius: 50%; margin-bottom: 10px; position: relative; z-index: 2; box-shadow: 0 0 0 10px white; }
+.tl-content { background: white; padding: 15px 20px; display: inline-block; width: 90%; position: relative; z-index: 2; border-radius: 4px; }
+.tl-content h3 { font-family: 'Tenor Sans', sans-serif; font-size: 1.5rem; margin: 0 0 5px 0; color: var(--green-forest); text-transform: uppercase; letter-spacing: 1px; }
+.tl-content p { font-family: 'Tenor Sans', sans-serif; font-size: 0.9rem; letter-spacing: 1px; color: #555; margin: 0; line-height: 1.4; }
+/* =========================================
+   ITINERARIO (VERSIÓN IMÁGENES PNG)
+   ========================================= */
+
+/* EN TU SECCIÓN DE ITINERARIO EN STYLE.CSS */
+
+/* ... (las reglas .timeline-container, .timeline-item, etc. siguen igual) ... */
+
+/* Contenedor del ícono */
+.tl-icon { 
+    margin-bottom: 15px; 
+    z-index: 3; 
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent; 
+    width: 80px; 
+    height: 80px; 
+}
+
+/* --- AQUÍ ESTÁ EL CAMBIO (SIN SOMBRA) --- */
+.icon-img {
+    width: 65px;  
+    height: 65px;
+    object-fit: contain; 
+    
+    /* SE ELIMINÓ LA LÍNEA DE FILTER: DROP-SHADOW */
+    
+    transition: transform 0.3s ease;
+}
+
+/* Animación de flotado suave (se mantiene) */
+@keyframes float {
+	0% { transform: translateY(0px); }
+	50% { transform: translateY(-6px); }
+	100% { transform: translateY(0px); }
+}
+
+.floating-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Efecto al pasar el mouse (solo crece un poco, sin sombra) */
+.timeline-item:hover .icon-img {
+    transform: scale(1.1);
+    /* SE ELIMINÓ LA SOMBRA DEL HOVER TAMBIÉN */
+}
+
+/* ... (resto del código sigue igual) ... */
+
+
+/* --- BLOQUES DE DETALLES (DISEÑO VERTICAL) --- */
+.details-blocks { 
+    background: var(--bg-cream); 
+    padding: 60px 20px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 40px; 
+    align-items: center;
+}
+
+.detail-card { 
+    background: white; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+    width: 100%; 
+    max-width: 900px; 
+    overflow: hidden; 
+}
+
+.detail-img img { 
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    display: block; 
+}
+
+/* Nuevo contenedor para la info vertical */
+.detail-info-vertical {
+    padding: 50px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espacio entre elementos */
+}
+
+/* Título de arriba (CEREMONIA) */
+.detail-title {
+    font-size: 1.5rem;
+    color: var(--green-forest);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* La línea vertical separadora */
+.detail-vertical-line {
+    width: 1px;
+    height: 40px; /* Altura de la línea */
+    background: var(--brown-gold);
+    opacity: 0.5;
+}
+
+/* Grupo de abajo (Nombre + Botón) */
+.detail-bottom-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.venue-name {
+    font-size: 1.2rem;
+    color: var(--brown-gold);
+    letter-spacing: 2px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.btn-line { text-decoration: none; color: black; border-bottom: 1px solid var(--brown-gold); font-size: 0.7rem; letter-spacing: 2px; }
+
+/* INFO IMPORTANTE */
+.important-details-pro { padding: 80px 20px; background: var(--bg-cream); }
+.details-card-frame { background: white; max-width: 900px; margin: 0 auto; padding: 50px 30px; border: 1px solid #e3e3e3; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; text-align: center; width: 100%; }
+.details-card-frame::before { content: ''; position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px; border: 1px solid var(--brown-gold); opacity: 0.5; pointer-events: none; }
+.details-content-grid { display: flex; flex-direction: column; gap: 40px; align-items: center; margin-top: 30px; font-family: 'Poppins', sans-serif; }
+.detail-item { flex: 1; padding: 0 20px; display: flex; flex-direction: column; align-items: center; width: 100%; }
+.detail-icon-gold { width: 50px; height: 50px; color: var(--brown-gold); margin-bottom: 20px; }
+.detail-heading { font-size: 1.2rem; letter-spacing: 3px; color: var(--green-forest); margin-bottom: 15px; font-weight: 600; font-family: 'Tenor Sans', sans-serif; }
+.detail-desc { font-size: 0.95rem; line-height: 1.8; color: #666; max-width: 300px; }
+.vertical-gold-line { width: 100px; height: 1px; background: var(--brown-gold); opacity: 0.3; }
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+    .detail-card { 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        align-items: center; 
+    }
+    .detail-card.reverse { 
+        direction: rtl; 
+    }
+    .detail-card.reverse .detail-info-vertical { 
+        direction: ltr; 
+    }
+    
+    .detail-img img { height: 100%; min-height: 400px; }
+    
+    .details-content-grid { flex-direction: row; align-items: flex-start; justify-content: center; }
+    .vertical-gold-line { width: 1px; height: 120px; margin-top: 20px; }
+    .main-name { font-size: 6rem; }
+}
+
+/* =========================================
+   5. GALERÍA (MOMENTOS INOLVIDABLES)
+   ========================================= */
+.gallery-section { 
+    padding: 80px 10px; 
+    text-align: center; 
+    background: var(--bg-cream); 
+}
+
+.gallery-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en celular */
+    gap: 15px; 
+    margin-top: 40px; 
+    max-width: 1000px; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.g-item img { 
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    border-radius: 2px; 
+    transition: transform 0.5s ease, filter 0.3s ease; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.g-item:hover img { 
+    transform: scale(1.02); 
+    filter: brightness(1.1);
+}
+
+
+/* =========================================
+   6. MESA DE REGALOS
+   ========================================= */
+.gifts-section { 
+    padding: 100px 20px; 
+    background: white; 
+    text-align: center; 
+}
+
+.gift-intro {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.gift-grid { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px; 
+    align-items: center; 
+}
+
+.gift-box { 
+    border: 1px solid var(--brown-gold); 
+    padding: 50px 30px; 
+    width: 100%; 
+    max-width: 400px; 
+    background: #fff; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+/* Efecto elegante al pasar mouse */
+.gift-box:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 40px rgba(103, 50, 60, 0.1); 
+}
+
+.icon-box-md {
+    margin-bottom: 20px;
+    color: var(--brown-gold);
+}
+.icon-svg-md { width: 50px; height: 50px; fill: currentColor; }
+
+.gift-title { 
+    font-size: 1rem; 
+    letter-spacing: 2px; 
+    margin-bottom: 15px; 
+    color: var(--text-dark);
+}
+
+.bank-text { 
+    font-size: 0.95rem; 
+    color: #555; 
+    line-height: 1.6; 
+    margin-bottom: 25px; 
+}
+
+/* Botones */
+.btn-outline { 
+    background: transparent; 
+    border: 1px solid var(--brown-gold); 
+    color: var(--brown-gold); 
+    padding: 12px 30px; 
+    cursor: pointer; 
+    letter-spacing: 2px; 
+    font-size: 0.8rem; 
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: var(--brown-gold);
+    color: white;
+}
+
+.btn-solid { 
+    background: var(--brown-gold); 
+    color: white; 
+    padding: 12px 35px; 
+    text-decoration: none; 
+    font-size: 0.8rem; 
+    letter-spacing: 2px; 
+    display: inline-block; 
+    transition: opacity 0.3s;
+}
+
+.btn-solid:hover { opacity: 0.8; }
+
+
+/* =========================================
+   7. LIBRO DE VISITAS
+   ========================================= */
+.guestbook-section { 
+    padding: 100px 20px; 
+    background: var(--bg-cream); 
+    text-align: center; 
+}
+
+.messages-slider { 
+    display: flex; 
+    gap: 20px; 
+    overflow-x: auto; 
+    padding: 20px 0 40px 0; 
+    justify-content: flex-start; /* Para scroll horizontal en móvil */
+    scrollbar-width: none; /* Ocultar barra scroll Firefox */
+}
+.messages-slider::-webkit-scrollbar { display: none; } /* Ocultar barra Chrome */
+
+.msg-card { 
+    background: white; 
+    padding: 40px 30px; 
+    min-width: 300px; 
+    border: 1px solid #e0e0e0; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    border-radius: 4px;
+}
+
+.msg-card p { 
+    font-family: 'Tenor Sans', sans-serif; 
+    font-style: italic; 
+    font-size: 1.1rem; 
+    color: #444; 
+    margin-bottom: 15px;
+}
+
+.msg-card span {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--brown-gold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-text { 
+    display: inline-block; 
+    margin-top: 20px; 
+    text-decoration: none; 
+    color: var(--brown-gold); 
+    font-weight: 600; 
+    font-size: 0.9rem; 
+    letter-spacing: 2px; 
+    border-bottom: 1px solid var(--brown-gold); 
+    padding-bottom: 3px;
+}
+
+
+/* =========================================
+   8. ÁLBUM DIGITAL
+   ========================================= */
+.album-section { 
+    padding: 100px 20px; 
+    background: white; 
+}
+
+.album-container { 
+    border: 1px solid var(--brown-gold); 
+    padding: 15px; 
+    max-width: 600px; 
+    margin: 0 auto; 
+    background: white; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.album-content { 
+    border: 1px solid var(--brown-gold); 
+    padding: 60px 20px; 
+    text-align: center; 
+}
+
+.album-heading { 
+    font-size: 2.2rem; 
+    letter-spacing: 3px; 
+    margin-bottom: 10px; 
+    color: var(--text-dark);
+}
+
+.qr-frame { 
+    margin: 30px auto; 
+    width: 180px; 
+    padding: 10px; 
+    border: 1px dashed #ccc; 
+    background: white;
+}
+.qr-code { width: 100%; display: block; }
+
+.btn-black { 
+    background: var(--text-dark); 
+    color: white; 
+    text-decoration: none; 
+    padding: 15px 40px; 
+    font-size: 0.8rem; 
+    letter-spacing: 3px; 
+    display: inline-block; 
+    font-weight: 500; 
+    transition: background 0.3s;
+}
+.btn-black:hover { background: #4a242b; }
+
+
+/* =========================================
+   9. RSVP (CONFIRMACIÓN)
+   ========================================= */
+.rsvp-section { 
+    padding: 100px 20px; 
+    background: url('foto2.jpg') center/cover fixed; 
+    display: flex; 
+    justify-content: center; 
+    position: relative; 
+}
+
+/* Capa de color verde encima de la foto */
+.rsvp-section::before { 
+    content: ''; 
+    position: absolute; 
+    inset: 0; 
+    background: rgba(167, 179, 167, 0.9); /* Verde Forest (var green-forest) con opacidad */
+}
+
+/* Estilo para el título "Confirmación" */
+.rsvp-title {
+    font-size: 3rem;       /* Tamaño grande y legible */
+    margin: 0;
+    
+    /* Estos dos son CLAVE para que no se corte la letra abajo */
+    line-height: 1.4;
+    padding-bottom: 15px;
+    
+    text-align: center;
+}
+
+.rsvp-wrapper { 
+    position: relative; 
+    z-index: 2; 
+    background: white; 
+    padding: 60px 30px; 
+    max-width: 500px; 
+    width: 100%; 
+    text-align: center; 
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3); 
+    border-radius: 4px;
+}
+
+.rsvp-deadline {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+/* Inputs bonitos */
+.rsvp-form .input-group { margin-bottom: 20px; }
+
+.rsvp-form input, 
+.rsvp-form select { 
+    width: 100%; 
+    padding: 15px; 
+    border: none;
+    border-bottom: 1px solid #ccc; 
+    background: transparent; 
+    font-family: 'Poppins'; 
+    font-size: 1rem; 
+    outline: none; 
+    transition: border-color 0.3s;
+    color: #333;
+}
+
+.rsvp-form input:focus, 
+.rsvp-form select:focus {
+    border-bottom-color: var(--brown-gold);
+}
+
+.btn-gold { 
+    width: 100%; 
+    background: var(--brown-gold); 
+    color: white; 
+    padding: 18px; 
+    border: none; 
+    font-size: 0.9rem; 
+    letter-spacing: 3px; 
+    font-weight: 500; 
+    cursor: pointer; 
+    transition: background 0.3s; 
+    font-family: 'Tenor Sans'; 
+    margin-top: 20px;
+}
+
+.btn-gold:hover { 
+    background: #4e262e; 
+}
+
+/* Footer */
+footer { 
+    text-align: center; 
+    padding: 40px; 
+    background: var(--brown-gold); 
+    color: rgba(255,255,255,0.8); 
+    font-size: 0.8rem; 
+    letter-spacing: 2px; 
+}
+
+/* MEDIA QUERIES PARA ESTAS SECCIONES */
+@media (min-width: 768px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    
+    .gift-grid { 
+        flex-direction: row; 
+        justify-content: center; 
+        align-items: stretch;
+    }
+    
+    .messages-slider { 
+        justify-content: center; 
+    }
+}
+
+
+
+
+/* --- AJUSTES DE TIPOGRAFÍA PARA DETAILS BLOCKS --- */
+
+/* Agrupa el título (Imprenta + Cursiva) */
+.detail-header-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px; /* Espacio antes de la línea vertical */
+    line-height: 1;
+}
+
+/* Ajuste específico para la cursiva dentro de las tarjetas */
+.custom-detail-title {
+    font-size: 3.5rem !important; /* Tamaño grande como en la foto */
+    color: var(--green-forest);   /* Color verde elegante */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+/* Ajuste para la letra pequeña de arriba (CEREMONIA, CÓDIGO DE) */
+.detail-header-group .mix-top {
+    margin-bottom: 1; /* Quitar margen extra para que estén pegaditos */
+    color: #888;      /* Un gris suave o dorado si prefieres */
+    font-size: 0.8rem;
+}
+
+/* Aseguramos que la línea vertical tenga buen espacio */
+.detail-vertical-line {
+    width: 1px;
+    height: 40px;
+    background: var(--brown-gold);
+    opacity: 0.4;
+    margin: 10px 0 20px 0; /* Espaciado arriba y abajo de la línea */
+}
+
+
+/* =========================================
+   EXTRAS (CORRECCIÓN ÍCONO MÚSICA)
+   ========================================= */
+.music-player { 
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    background: white; 
+    width: 40px; /* El contenedor mide 40px */
+    height: 40px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 100; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    cursor: pointer; /* Para indicar que es clicable */
+}
+
+/* --- AGREGA ESTA REGLA --- */
+/* Esto fuerza a CUALQUIER ícono (play, pausa o nota) dentro del player a ser pequeño */
+.music-player svg {
+    width: 24px !important;  /* Usamos !important para asegurar que nada lo sobrescriba */
+    height: 24px !important;
+    fill: var(--green-forest); /* Asegura el color correcto */
+}
+
+/* Las clases anteriores como .icon-svg-sm ya no son necesarias para esto, 
+   pero puedes dejarlas si las usas en otro lado. */
+
+
+/* Busca esto en style.css y REEMPLÁZALO o pégalo al final */
+
+.detail-card { 
+    background: white; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+    width: 100%; 
+    max-width: 900px; 
+    
+    /* ESTOS SON LOS CAMBIOS NUEVOS: */
+    border-radius: 20px;   /* Redondea las esquinas */
+    overflow: hidden;      /* Asegura que la foto no se salga del redondeado */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Suaviza la animación */
+}
+
+/* Animación al pasar el mouse */
+.detail-card:hover {
+    transform: translateY(-10px); /* Se eleva */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1); /* Sombra más fuerte */
+}
+
+
+
+/* =========================================
+   NUEVOS ESTILOS PARA MENSAJES Y FOTOS
+   ========================================= */
+
+/* Sección de mensaje emocional */
+.emotional-msg-section {
+    padding: 80px 20px;
+    background: #fff; /* Fondo blanco limpio */
+    text-align: center;
+}
+
+.emotional-msg-section.alt-bg {
+    background: var(--bg-cream); /* Fondo crema alternativo */
+}
+
+.msg-box {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px;
+}
+
+/* Decoración sutil de comillas o líneas (opcional) */
+.msg-box::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--brown-gold);
+    margin: 0 auto 30px auto;
+    opacity: 0.5;
+}
+
+.msg-text {
+    font-size: 1.2rem;
+    line-height: 2;
+    color: var(--text-dark);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Sección de Padres arreglada */
+.parents-list-section {
+    padding: 80px 20px;
+    background: #fff;
+    text-align: center;
+}
+.decorative-line-dark {
+    width: 1px;
+    height: 50px;
+    background: var(--brown-gold);
+    opacity: 0.3;
+}
+
+/* Grid de 3 imágenes (Collage antes de RSVP) */
+.collage-3-imgs {
+    display: grid;
+    grid-template-columns: 1fr; /* Móvil: 1 columna */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.collage-item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 4px; /* Un toque suave */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease;
+}
+
+.collage-item:hover img {
+    transform: scale(1.02);
+}
+
+/* Versión escritorio para el collage */
+@media (min-width: 768px) {
+    .collage-3-imgs {
+        grid-template-columns: repeat(3, 1fr); /* PC: 3 columnas */
+    }
+    
+    /* Hacemos la del medio un poco más alta para que se vea dinámico (opcional) */
+    .collage-item:nth-child(2) img {
+        height: 400px; 
+        margin-top: -25px;
+    }
+}
+
+/* =========================================
+   NUEVOS ESTILOS PREMIUM (CORRECCIONES)
+   ========================================= */
+
+/* --- 1. PRIMER MENSAJE (Elegante y Limpio) --- */
+.msg-section-elegant {
+    padding: 100px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+.elegant-divider {
+    width: 60px;
+    height: 2px;
+    background-color: var(--brown-gold);
+    margin: 0 auto 30px;
+}
+.msg-text-lg {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.8;
+}
+.msg-text-md {
+    font-size: 1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- 2. SECCIÓN PADRES (Recuadros sobre Verde) --- */
+.parents-section-luxury {
+    background-color: var(--green-forest); /* Fondo Verde Oscuro */
+    padding: 90px 20px;
+    color: white;
+}
+.parents-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+.parent-box {
+    border: 1px solid rgba(255,255,255, 0.4); /* Borde sutil */
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    background: rgba(255,255,255, 0.05); /* Fondo muy sutil */
+    backdrop-filter: blur(2px);
+}
+.parent-label {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+.parent-line {
+    width: 40px;
+    height: 1px;
+    background: white;
+    margin: 0 auto 20px;
+    opacity: 0.5;
+}
+.parents-separator {
+    font-size: 3rem;
+    color: rgba(255,255,255, 0.5);
+}
+
+/* Media Query para Padres en PC */
+@media (min-width: 768px) {
+    .parents-grid {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+    }
+    .parents-separator { margin-top: 50px; }
+}
+
+
+/* --- 3. SEGUNDO MENSAJE (Fondo Beige) --- */
+.msg-section-alt {
+    padding: 80px 20px;
+    background-color: #f9f6f2; /* Beige muy suave */
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+.msg-text-italic {
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--brown-gold);
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+
+/* --- 4. MENSAJE FINAL (Collage + Glassmorphism) --- */
+.collage-overlay-section {
+    position: relative;
+    width: 100%;
+    min-height: 600px; /* Altura para que luzcan las fotos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+/* El fondo Grid de imágenes */
+.collage-bg-grid {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Una columna ancha, una angosta */
+    gap: 5px;
+    z-index: 0;
+}
+
+/* Foto alta izquierda */
+.c-img-tall {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Columna derecha con 2 fotos */
+.c-col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.c-img-short {
+    flex: 1; /* Ocupan mitad y mitad */
+    background-size: cover;
+    background-position: center;
+}
+
+/* CAPA DE CRISTAL (El recuadro transparente) */
+.glass-overlay-box {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.75); /* Blanco semitransparente */
+    backdrop-filter: blur(8px); /* Efecto borroso detrás */
+    -webkit-backdrop-filter: blur(8px);
+    padding: 50px 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 2px; /* Esquinas sutiles */
+}
+
+/* Texto dentro del cristal */
+.glass-title {
+    font-size: 3.5rem !important;
+    color: var(--brown-gold);
+    margin: 0;
+    line-height: 1.2;
+}
+.glass-line {
+    width: 50px;
+    height: 2px;
+    background: var(--brown-gold);
+    margin: 15px auto 20px;
+}
+.glass-msg {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* Ajuste móvil para el collage */
+@media (max-width: 768px) {
+    .collage-overlay-section { min-height: 500px; }
+    .glass-overlay-box { padding: 30px 20px; }
+    .glass-title { font-size: 2.8rem !important; }
+}
+
+/* =========================================
+   NUEVO DISEÑO: MENSAJE 1 (TARJETA CON MARCO)
+   ========================================= */
+
+.msg-section-framed {
+    padding: 40px 40px 100px 40px;
+    background-color: var(--bg-cream); /* Fondo crema para contrastar con la tarjeta */
+    display: flex;
+    justify-content: center;
+}
+
+.msg-card-frame {
+    background: white;
+    padding: 60px 40px;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    
+    /* El marco dorado elegante */
+    border: 1px solid var(--brown-gold);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05); /* Sombra suave para elevarlo */
+    
+    /* Efecto de "doble borde" usando outline */
+    outline: 1px solid rgba(103, 50, 60, 0.2); /* Un segundo borde más suave */
+    outline-offset: -10px; /* Mete el segundo borde hacia adentro */
+}
+
+/* Adorno de estrella arriba */
+.frame-icon {
+    display: block;
+    color: var(--brown-gold);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+/* Texto introductorio en mayúsculas (Tenor) */
+.msg-intro-caps {
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    color: var(--brown-gold);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Texto principal (Poppins) */
+.msg-body-text {
+    font-size: 0.95rem; /* Tamaño elegante, no muy grande */
+    line-height: 2;      /* Mucho espacio entre líneas para elegancia */
+    color: #555;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+/* Pequeña línea divisoria */
+.gold-divider-short {
+    width: 40px;
+    height: 1px;
+    background: var(--brown-gold);
+    margin: 20px auto;
+    opacity: 0.4;
+}
+
+/* Firma cursiva al final */
+.msg-signoff {
+    font-size: 2.5rem !important;
+    color: var(--brown-gold);
+    margin-top: 30px;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+    .msg-card-frame {
+        padding: 40px 25px; /* Menos relleno en celular */
+        outline-offset: -8px;
+    }
+}
+
+/* LÍNEA DIVISORIA INTELIGENTE (PADRES) */
+/* LÍNEA DIVISORIA (Vertical en celular y PC) */
+.luxury-divider {
+    background-color: white;
+    opacity: 0.4; 
+    
+    /* --- CAMBIO: AHORA ES VERTICAL SIEMPRE --- */
+    width: 1px;        /* Ancho fino (línea vertical) */
+    height: 60px;      /* Altura en celular (el largo de la línea) */
+    margin: 20px auto; /* Centrado automático */
+}
+
+/* Ajuste para PC (La hacemos más alta porque las cajas son más grandes) */
+@media (min-width: 768px) {
+    .luxury-divider {
+        height: 140px;  /* Más alta en pantalla grande */
+        margin: 0 50px; /* Margen a los lados en vez de arriba/abajo */
+    }
+}
+
+/* =========================================
+   ESTILO PARA LA FOTO/MEME DE HISTORIA
+   ========================================= */
+
+/* El contenedor para separar la foto del texto */
+.story-meme-container {
+    margin: 35px 0; /* Espacio arriba y abajo */
+    text-align: center; /* Centrar la imagen */
+    position: relative;
+    z-index: 2; /* Asegura que quede por encima */
+}
+
+/* Estilo de la imagen "tipo foto impresa" */
+.story-meme-img {
+    max-width: 100%; /* Que no se salga en celulares */
+    width: 320px;    /* Un tamaño ideal para que se aprecie pero no invada */
+    height: auto;
+    
+    /* El marco blanco tipo fotografía */
+    border: 8px solid #fff; 
+    
+    /* Esquinas ligeramente redondeadas */
+    border-radius: 3px;
+    
+    /* Sombra suave para darle profundidad */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    
+    /* Una ligera inclinación para que se vea natural y divertida */
+    transform: rotate(-3deg);
+    
+    /* Suavizar la animación al pasar el mouse */
+    transition: all 0.4s ease;
+}
+
+/* Efecto al pasar el mouse sobre el meme */
+.story-meme-img:hover {
+    transform: rotate(0deg) scale(1.05); /* Se endereza y crece un poquito */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2); /* La sombra crece */
+}
+
+
+
+/* =========================================
+   SECCIÓN FOTOS + CITA (DISEÑO SEPARADO)
+   ========================================= */
+
+.gallery-quote-section {
+    padding: 80px 20px;
+    background-color: var(--bg-cream); /* Fondo suave */
+}
+
+/* --- 1. GRID DE FOTOS --- */
+.photos-split-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Izquierda más ancha */
+    gap: 10px;
+    height: 450px; /* Altura total del collage */
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.photo-tall {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.photos-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+}
+
+.photo-short {
+    flex: 1; /* Ocupan 50% cada una */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+/* --- 2. CAJA DE TEXTO (ABAJO) --- */
+.quote-box-bottom {
+    text-align: center;
+    margin-top: 50px; /* Separación de las fotos */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+}
+
+.quote-title {
+    font-size: 3.5rem !important;
+    color: var(--brown-gold);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.quote-line {
+    width: 60px;
+    height: 2px;
+    background: var(--brown-gold);
+    margin: 15px auto 25px;
+    opacity: 0.3;
+}
+
+.quote-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.quote-ref {
+    font-size: 0.9rem;
+    color: var(--green-forest);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* --- AJUSTE PARA CELULAR --- */
+@media (max-width: 768px) {
+    .photos-split-grid {
+        grid-template-columns: 1fr; /* Una sola columna */
+        grid-template-rows: 300px 300px; /* Altura fija para cada parte */
+        height: auto; /* Altura automática */
+    }
+    
+    .photo-tall {
+        height: 300px; /* Altura de la foto principal */
+    }
+    
+    .photos-right-col {
+        flex-direction: row; /* Poner las 2 pequeñas lado a lado abajo */
+        height: 150px;
+    }
+    
+    .quote-title {
+        font-size: 3rem !important;
+    }
+}
+
+
+/* =========================================
+   DISEÑO EDITORIAL (FOTOS + TEXTO UNIDO)
+   ========================================= */
+
+.msg-editorial-section {
+    padding: 80px 20px;
+    background-color: var(--bg-cream);
+}
+
+/* La tarjeta contenedora principal */
+.editorial-card {
+    background: white;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex; /* Esto pone fotos y texto lado a lado */
+    flex-direction: column; /* En celular empieza vertical */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* --- ÁREA DE FOTOS --- */
+.editorial-visuals {
+    display: flex;
+    height: 300px; /* Altura en celular */
+}
+
+.ed-photo {
+    flex: 1; /* Cada foto ocupa el 50% */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+/* Efecto bonito: al pasar el mouse sobre la tarjeta, las fotos se acercan lento */
+.editorial-card:hover .ed-photo {
+    transform: scale(1.05);
+}
+
+/* --- ÁREA DE TEXTO --- */
+.editorial-content {
+    padding: 50px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background: white;
+    z-index: 2; /* Para tapar el zoom de las fotos si se salen */
+}
+
+/* Un borde interno dorado para mantener la elegancia */
+.ed-text-wrapper {
+    border: 1px solid var(--brown-gold);
+    padding: 30px 20px;
+    width: 100%;
+    position: relative;
+}
+
+/* --- VERSIÓN COMPUTADORA (PANTALLA GRANDE) --- */
+@media (min-width: 768px) {
+    .editorial-card {
+        flex-direction: row; /* Pone las fotos a la izquierda y texto a la derecha */
+        min-height: 450px;
+    }
+
+    .editorial-visuals {
+        width: 45%; /* Las fotos ocupan el 45% del ancho */
+        height: auto; /* Altura automática (se estira con el texto) */
+        flex-direction: column; /* Una foto arriba de la otra para llenar el alto */
+    }
+    
+    .editorial-content {
+        width: 55%; /* El texto ocupa el resto */
+        padding: 60px;
+    }
+}
+
+/* ESTILOS PARA LAS FOTOS AL FINAL DEL MENSAJE */
+
+.photos-end-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Separación entre fotos */
+    margin-top: 40px; /* Separación del divisor dorado */
+}
+
+.end-photo {
+    width: 150px;  /* Ancho de la foto */
+    height: 200px; /* Alto de la foto (formato vertical) */
+    object-fit: cover; /* Para que la foto se recorte bien sin deformarse */
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra suave */
+    border: 4px solid white; /* Marco blanco tipo foto */
+    outline: 1px solid #ddd; /* Borde gris sutil fuera del blanco */
+}
+
+/* Ajuste para celulares pequeños */
+@media (max-width: 400px) {
+    .end-photo {
+        width: 120px;
+        height: 160px;
+    }
+}
+
+
+/* ESTILO PARA EL BOTÓN DE LLAMADA ÚNICO */
+
+.btn-call-single {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Quita el subrayado del enlace */
+    width: 100%;
+    max-width: 350px; /* Que no sea excesivamente ancho */
+    margin: 0 auto;
+    
+    /* Efecto de elevación suave */
+    box-shadow: 0 10px 20px rgba(103, 50, 60, 0.15);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-call-single:hover {
+    transform: translateY(-3px);
+    background-color: #4e262e; /* Un tono más oscuro al pasar el mouse */
+    color: white;
+}
+
+p {
+  max-width: 100%;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  overflow-wrap: normal;
+  word-wrap: normal;
+  word-break: keep-all;
+}
+
+/* Estilo para el nuevo ícono de imagen (pin.jpg) */
+.custom-pin-icon {
+    width: 100%;     /* Ocupa el ancho del contenedor (50px) */
+    height: 100%;    /* Ocupa el alto del contenedor (50px) */
+    object-fit: contain; /* Asegura que el pin se vea completo sin estirarse */
+    display: block;
+}
+/* =========================================
+   ESTILO PARA LOS ICONOS DE IMAGEN (PASE Y PIN)
+   ========================================= */
+
+.custom-icon-img {
+    width: 100%;      /* Ocupa todo el ancho del contenedor (50px) */
+    height: 100%;     /* Ocupa todo el alto del contenedor (50px) */
+    object-fit: contain; /* Asegura que la imagen no se recorte ni deforme */
+    display: block;
+}
+

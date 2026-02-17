@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kenya & David | Nuestra Boda</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Montserrat:wght@300;400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="envelope-overlay" class="envelope-overlay" onclick="abrirInvitacion()">
+        <img src="cartera.jpeg" alt="Carta de Invitación" class="envelope-bg-img">
+        <p class="tap-text-overlay">Toca la carta para abrir</p>
+    </div>
+
+    <div class="music-player pulse-animation" id="musicBtn" data-aos="fade-left" data-aos-delay="1500">
+        <svg class="icon-svg-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+    </div>
+    <audio id="weddingMusic" loop>
+        <source src="Hasta mi Final Il Divo Piano solo.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="names-container">
+            <h1 class="font-brittany main-name" data-aos="zoom-out" data-aos-duration="2000">Kenya & David</h1>
+            <p class="font-tenor location-top" data-aos="fade-up" data-aos-delay="600">MONTERREY, NUEVO LEÓN • 2026</p>
+        </div>
+    </header>
+
+    <section class="parents-section" style="padding-bottom: 40px;">
+        <div class="container">
+            <p class="font-poppins intro-phrase" data-aos="fade-up">"La magia de la conexión, la suerte de coincidir, el esfuerzo de permanecer y la bendición de ser un nosotros"</p>
+            <p class="font-brittany intro-phrase" style="font-size: 4rem; margin-top: 20px;" data-aos="fade-up">¡Nos casamos!</p>  
+        </div>
+    </section>
+
+    <section>
+        <div class="magazine-counter" data-aos="fade-up">
+            <div class="relative-box">
+                <div class="mag-header" data-aos="fade-down" data-aos-delay="200">
+                    <p class="font-brittany">Sábado</p>
+                </div>
+                
+                <div class="mag-date-display" data-aos="zoom-in" data-aos-delay="400">
+                    <span class="mag-day font-tenor">18</span>
+                    <div class="mag-vertical-line"></div>
+                    <div class="mag-month-year font-tenor">
+                        <span>AGOSTO</span>
+                        <span>2026</span>
+                    </div>
+                </div>
+                
+                <div class="mag-std" data-aos="fade-up" data-aos-delay="600">
+                    <p class="font-brittany">Save the Date</p>
+                </div>
+                
+                <div id="countdown" class="mag-timer font-tenor" data-aos="fade-up" data-aos-delay="800">
+                    <div class="time-col"><span id="days">00</span><small>DÍAS</small></div>
+                    <div class="time-col"><span id="hours">00</span><small>HRS</small></div>
+                    <div class="time-col"><span id="minutes">00</span><small>MIN</small></div>
+                    <div class="time-col"><span id="seconds">00</span><small>SEG</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <section class="msg-section-framed">
+        <div class="container" data-aos="fade-up">
+            <div class="msg-card-frame">
+                
+                <p class="font-poppins msg-body-text">
+                    Hay momentos en la vida que son especiales por sí solos, pero 
+                    compartirlos con las personas que queremos los hace inolvidables.
+                    Hemos decidido unir nuestras vidas en matrimonio y sería un honor para nosotros poder contar con su presencia.
+                </p>
+                            </div>
+            
+            </div>
+        </div>
+    </section>
+
+
+    <section class="parents-section-luxury">
+        <div class="container">
+            
+            <p class="font-tenor" style="text-align: center; color: white; font-size: 1.1rem; margin-bottom: 60px; letter-spacing: 2px;" data-aos="fade-up">
+                CON NUESTRO AMOR Y LA BENDICIÓN DE DIOS
+            </p>
+
+            <div class="section-header-clean" data-aos="fade-up">
+                <span class="mix-top" style="color: rgba(255,255,255,0.8);">Y DE</span>
+                <span class="mix-bottom font-brittany" style="color: white;">Nuestros Padres</span>
+            </div>
+            
+            <div class="parents-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="parent-box">
+                    <span class="parent-label font-poppins">Padres de la novia</span>
+                    <div class="parent-line"></div>
+                    <p class="font-tenor">María Cristina López (†)</p>
+                    <p class="font-tenor">Francisco Resendiz</p>
+                </div>
+
+                <div class="luxury-divider"></div>
+
+                <div class="parent-box">
+                    <span class="parent-label font-poppins">Padres del novio</span>
+                    <div class="parent-line"></div>
+                    <p class="font-tenor">Alma Yolanda Barrientos</p>
+                    <p class="font-tenor">David Antonio Castillo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="godparents-slider-section">
+        <div class="container">
+            <div class="section-header-clean" data-aos="fade-up">
+                <span class="mix-top" style="color: var(--green-forest);">NUESTROS</span>
+                <span class="mix-bottom font-brittany" style="color: var(--green-forest);">Padrinos</span>
+            </div>
+
+            <div class="swiper mySwiper" data-aos="zoom-in" data-aos-delay="200">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="gp-slide-card">
+                            <span class="gp-slide-role">PADRINOS DE ANILLOS</span>
+                            <div class="gp-slide-line"></div>
+                            <h3 class="gp-slide-name font-poppins">Sonia López <br>&<br> Sergio Castilla</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gp-slide-card">
+                            <span class="gp-slide-role">PADRINOS DE LAZO</span>
+                            <div class="gp-slide-line"></div>
+                            <h3 class="gp-slide-name font-poppins">Verónica García <br>&<br> Armando Castilla</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gp-slide-card">
+                            <span class="gp-slide-role">PADRINOS DE ARRAS</span>
+                            <div class="gp-slide-line"></div>
+                            <h3 class="gp-slide-name font-poppins">Antonia Sánchez <br>&<br> Carlos Resendiz</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="msg-section-framed" style="padding-top: 60px;"> 
+        <div class="container" data-aos="fade-up">
+            <div class="msg-card-frame">
+                
+                <p class="font-poppins msg-body-text">
+                    "Y llegamos justo a tiempo para coincidir y enamorarnos; para construir un amor invencible; 
+                    para abrazarnos el alma en las
+                    tormentas; para ser cómplices de nuestros sueños;
+                    para que seamos el uno para el otro; porque nuestros corazones 
+                    están destinados a conectar y a 
+                    permanecer toda la vida."
+                </p>
+                
+                <div class="gold-divider-short"></div>
+
+                <div class="photos-end-row">
+                    <img src="foto1.jpg" alt="Nosotros" class="end-photo">
+                    <img src="W.jpg" alt="Boda" class="end-photo">
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+  <section>
+        <div class="details-blocks">
+            <div class="detail-card" data-aos="fade-up" data-aos-duration="1000">
+                <div class="detail-img"><img src="portada.jpg"></div>
+                <div class="detail-info-vertical">
+                    <div class="detail-header-group">
+                        <span class="mix-top">CEREMONIA</span>
+                        <span class="mix-bottom font-brittany custom-detail-title">Religiosa</span>
+                    </div>
+                    <div class="detail-vertical-line"></div>
+                    <div class="detail-bottom-group">
+                        <p class="font-tenor venue-name">CATEDRAL DE MONTERREY</p>
+                        <a href="https://maps.apple/p/HwVAo-KyGK8Lg-" class="btn-line font-tenor">VER UBICACIÓN</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-card reverse" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                <div class="detail-img"><img src="foto2.jpg"></div>
+                <div class="detail-info-vertical">
+                    <div class="detail-header-group">
+                        <span class="mix-top">NUESTRA</span>
+                        <span class="mix-bottom font-brittany custom-detail-title">Recepción</span>
+                    </div>
+                    <div class="detail-vertical-line"></div>
+                    <div class="detail-bottom-group">
+                        <p class="font-tenor venue-name">QUINTA LAS FLORES</p>
+                        <a href="https://maps.apple/p/jL_Eae4Bv-a7.w" class="btn-line font-tenor">VER UBICACIÓN</a>
+                    </div>
+                </div>
+            </div>
+
+  </section>
+        <section class="itinerary-section">
+        <div class="section-header-clean" data-aos="fade-up">
+            <span class="mix-top">ITINERARIO DEL</span>
+            <span class="mix-bottom font-brittany">Gran Día</span>
+        </div>
+        
+        <div class="timeline-container">
+            <div class="timeline-line" data-aos="zoom-in-down"></div>
+
+            <div class="timeline-item">
+                <div class="tl-time font-tenor" data-aos="fade-right">3:30 PM</div>
+                <div class="tl-icon floating-icon">
+                    <img src="icono-ceremonia.png" alt="Ceremonia" class="icon-img">
+                </div>
+                <div class="tl-content font-tenor" data-aos="fade-left"><h3>Ceremonia</h3><p>El momento del "Sí"</p></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="tl-time font-tenor" data-aos="fade-right">5:00 PM</div>
+                <div class="tl-icon floating-icon">
+                    <img src="icono-coctel.png" alt="Cóctel" class="icon-img">
+                </div>
+                <div class="tl-content font-tenor" data-aos="fade-left"><h3>Cóctel</h3><p>Brindis de bienvenida</p></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="tl-time font-tenor" data-aos="fade-right">6:30 PM</div>
+                <div class="tl-icon floating-icon">
+                    <img src="icono-banquete.png" alt="Banquete" class="icon-img">
+                </div>
+                <div class="tl-content font-tenor" data-aos="fade-left"><h3>Banquete</h3><p>Cena y música suave</p></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="tl-time font-tenor" data-aos="fade-right">8:00 PM</div>
+                <div class="tl-icon floating-icon">
+                    <img src="icono-fiesta.png" alt="Fiesta" class="icon-img">
+                </div>
+                <div class="tl-content font-tenor" data-aos="fade-left"><h3>Fiesta</h3><p>¡A celebrar!</p></div>
+            </div>
+        </div>
+    </section>
+  
+
+    <section class="story-fixed-section">
+        <div class="fixed-bg" style="background-image: url('foto2.jpg');"></div>
+        <div class="story-content" data-aos="zoom-out">
+            <div class="section-header-clean">
+                <span class="mix-top" style="color: var(--green-forest);">NUESTRA</span>
+                <span class="mix-bottom font-brittany" style="color: var(--green-forest);">Historia</span>
+            </div>
+        
+            <p class="story-text font-poppins">Cuando la vida cruza una publicación para compartir por Facebook, y la vida misma nos obsequia un amor para
+                siempre.</p>
+                        <figure class="story-meme-container" data-aos="zoom-in" data-aos-delay="200">
+                <img src="meme.png" alt="El meme que nos unió" class="story-meme-img">
+            </figure>
+            <p class="story-text font-poppins">Un simple meme nos juntó, un<br> 
+                "Yo lo tengo" nos acercó y no sabíamos que ese sería el inicio de nuestra historia. Con el tiempo, la magia creció, la vida fluyó, y el amor nos hizo decir un "Sí acepto".</p>
+            
+        </div>
+    </section>
+    <section>
+        <div class="details-blocks"> <div class="detail-card" data-aos="fade-up" data-aos-duration="1000">
+                <div class="detail-img"><img src="foto3.jpg"></div>
+                <div class="detail-info-vertical">
+                    <div class="detail-header-group">
+                        <span class="mix-top">CÓDIGO DE</span>
+                        <span class="mix-bottom font-brittany custom-detail-title">Vestimenta</span>
+                    </div>
+                    <div class="detail-vertical-line"></div>
+                    <div class="detail-bottom-group">
+                        <p class="font-tenor venue-name">RIGUROSO FORMAL</p>
+                        <a href="https://pin.it/7Dz0k5tX2" class="btn-line font-tenor">VER IDEAS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="important-details-pro" data-aos="fade-up">
+        <div class="container">
+            <div class="details-card-frame">
+                <div class="section-header-clean">
+                    <span class="mix-top" style="color: var(--brown-gold);">INFORMACIÓN</span>
+                    <span class="mix-bottom font-brittany" style="color: var(--green-forest);">Importante</span>
+                </div>
+                <div class="details-content-grid font-poppins">
+                    <div class="detail-item">
+                        <div class="detail-icon-gold">
+                            <img src="pase.jpeg" alt="Icono Pase" class="custom-icon-img">
+                        </div>
+                        <h3 class="font-tenor detail-heading">PASES ASIGNADOS</h3><p class="detail-desc">
+  Hemos reservado un lugar 
+  especial para ti. <br>
+  <span style="display: inline-block; width: 60px; border-bottom: 1px solid #000; margin-right: 5px; height: 18px; vertical-align: middle;"></span>
+  <span>pases</span><br>
+<strong>El número de pases es personal</strong> y se confirmará a través de WhatsApp.</p>
+                    </div>
+                    
+                    <div class="vertical-gold-line"></div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-icon-gold">
+                            <img src="pin.jpeg" alt="Pin Icon" class="custom-pin-icon">
+                        </div>
+                        <h3 class="font-tenor detail-heading">SOLO ADULTOS</h3>
+                        <p class="detail-desc">Amamos a los niños, pero <br>
+                            queremos que disfrutes esta noche con nosotros.<br></p><p class="font-tenor"><strong>EVENTO EXCLUSIVO PARA ADULTOS.</strong></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="gallery-section">
+        <div class="section-header-clean" data-aos="fade-up">
+            <span class="mix-top" style="color: var(--brown-gold);">MOMENTOS</span>
+            <span class="mix-bottom font-brittany" style="color: var(--brown-gold);">Inolvidables</span>
+        </div>
+        <div class="gallery-grid">
+            <div class="g-item" data-aos="fade-up"><img src="gal1.jpg"></div>
+            <div class="g-item" data-aos="fade-up" data-aos-delay="100"><img src="gal2.jpg"></div>
+            <div class="g-item" data-aos="fade-up" data-aos-delay="200"><img src="gal3.jpg"></div> <div class="g-item" data-aos="fade-up"><img src="gal4.jpg"></div> <div class="g-item" data-aos="fade-up" data-aos-delay="100"><img src="gal5.jpg"></div>
+            <div class="g-item" data-aos="fade-up" data-aos-delay="200"><img src="gal6.jpg"></div>
+            <div class="g-item" data-aos="fade-up"><img src="gal7.jpg"></div>
+            <div class="g-item" data-aos="fade-up" data-aos-delay="100"><img src="gal8.jpg"></div>
+        </div>
+    </section>
+
+    
+    <section class="gifts-section">
+        <div class="container">
+            <div class="section-header-clean" data-aos="fade-up">
+                <span class="mix-top">MESA DE</span>
+                <span class="mix-bottom font-brittany">Regalos</span>
+            </div>
+            <p class="gift-intro font-poppins" data-aos="fade-up">Su presencia es nuestro mejor regalo.</p>
+            <div class="gift-grid">
+                <div class="gift-box" data-aos="flip-left">
+                    <div class="icon-box-md"><svg class="icon-svg-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+                    <h3 class="font-tenor gift-title">TRANSFERENCIA</h3>
+                    <p class="font-tenor bank-text">Banco: Banamex<br>Titular: Kenya y David</p>
+                    <button class="btn-outline font-tenor" onclick="copyText('1234567890123456')">COPIAR CLABE</button>
+                </div>
+                <div class="gift-box" data-aos="flip-right">
+                    <div class="icon-box-md"><svg class="icon-svg-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15h-3v-8h3v8zm-5 0h-3v-8h3v8zm-5 0H7v-8h3v8zm-5 0H4v-8h3v8z"/></svg></div>
+                    <h3 class="font-tenor gift-title">LIVERPOOL</h3>
+                    <p class="font-tenor bank-text">Mesa de Bodas</p>
+                    <a href="#" class="btn-solid font-tenor">VER MESA</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guestbook-section">
+        <div class="section-header-clean" data-aos="fade-up">
+            <span class="mix-top">DÉJANOS AQUÍ UN MENSAJE CON</span>
+            <span class="mix-bottom font-brittany">tus mejores deseos</span>
+        </div>
+
+        <div class="messages-slider">
+            <div class="msg-card"><p>"¡Felicidades!"</p><span>- Familia Ruiz</span></div>
+            <div class="msg-card"><p>"Los queremos."</p><span>- Ana y Carlos</span></div>
+            <div class="msg-card"><p>"Que sean muy felices."</p><span>- Tía Sofia</span></div>
+        </div>
+        <a href="https://wa.me/528186694938" class="btn-text font-tenor">DEJAR MENSAJE ➔</a>
+    </section>
+
+
+    <section class="album-section">
+        <div class="album-container" data-aos="zoom-in">
+            <div class="album-content">
+                <h2 class="font-tenor album-heading">ÁLBUM DIGITAL</h2>
+                <p class="font-tenor">AYÚDANOS A CAPTURAR CADA MOMENTO</p>
+                <div class="qr-frame"><img src="frame.png" alt="QR" class="qr-code"></div>
+                <a href="https://photos.app.goo.gl/QChh5iwS7c75EZQu9" class="btn-black font-tenor">SUBIR FOTOS</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-quote-section">
+        <div class="container">
+            
+            <div class="photos-split-grid" data-aos="fade-up">
+                <div class="photo-tall" style="background-image: url('foto10.JPG');"></div>
+                
+                <div class="photos-right-col">
+                    <div class="photo-short" style="background-image: url('foto20.jpg');"></div>
+                    <div class="photo-short" style="background-image: url('foto30.jpg');"></div>
+                </div>
+            </div>
+
+            <div class="quote-box-bottom" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="font-brittany quote-title">Nuestro Amor</h2>
+                <div class="quote-line"></div>
+                <p class="font-poppins quote-text">
+                    "Uno solo puede ser vencido, pero dos pueden resistir,
+                    ¡La cuerda de tres hilos no se rompe fácil!"
+                </p>
+                <p class="font-tenor quote-ref">- Eclesiastés 4:12</p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="rsvp-section">
+        <div class="rsvp-wrapper" data-aos="fade-up">
+            <h2 class="font-brittany rsvp-title">Confirmación</h2>
+            <p class="rsvp-deadline font-tenor">FAVOR DE CONFIRMAR ANTES DEL 1 DE ENERO</p>
+            
+            <p class="font-poppins" style="margin-bottom: 40px; color: #555; line-height: 1.8;">
+                Para nosotros es muy importante compartir este día contigo.<br>
+                Agradecemos confirmar tu asistencia vía telefónica al siguiente número:
+            </p>
+
+            <div class="rsvp-call-box">
+                <a href="tel:+528112345678" class="btn-gold font-tenor btn-call-single">
+                    LLAMAR PARA CONFIRMAR
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer><p class="font-tenor">Hecho con amor | Kenya & David 2026</p></footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
