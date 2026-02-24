@@ -1,4 +1,4 @@
-const weddingDate = new Date("Aug 18, 2026 15:30:00").getTime();
+const weddingDate = new Date("Apr 11, 2026 11:30:00").getTime();
 
 // SVG ICONS
 const iconPlay = '<svg class="icon-svg-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
