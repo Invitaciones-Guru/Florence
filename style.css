@@ -121,7 +121,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .swiper-pagination-bullet-active { background: var(--green-forest) !important; }
 
 /* SAVE THE DATE */
-.magazine-counter { margin-top: 80px; margin-bottom: 40px; background: url('foto3.jpg') center/cover no-repeat fixed; position: relative; padding: 80px 0; display: flex; justify-content: center; align-items: center; }
+.magazine-counter { margin-top: 80px; margin-bottom: 40px; background: url('portada2.jpeg') center/cover no-repeat fixed; position: relative; padding: 80px 0; display: flex; justify-content: center; align-items: center; }
 .magazine-counter::before { display: none; }
 .relative-box { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.93); width: 90%; max-width: 450px; padding: 40px 20px; border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); text-align: center; }
 .mag-header p { font-size: 3rem !important; color: var(--brown-gold); margin: 0; line-height: 1.6; padding-bottom: 15px; display: block; }
