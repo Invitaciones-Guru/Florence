@@ -1441,3 +1441,20 @@ h1, h2, h3, h4, p, span {
     /* filter: invert(20%) sepia(19%) saturate(3832%) hue-rotate(316deg) brightness(96%) contrast(96%); */
 }
 
+/* Busca .parents-grid y cambia el gap */
+.parents-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Antes estaba en 30px, esto los junta en celular */
+    margin-top: 40px;
+}
+
+/* Busca el media query de PC para el luxury-divider y reduce el margen */
+@media (min-width: 768px) {
+    .luxury-divider {
+        height: 140px;  
+        margin: 0 15px; /* Antes estaba en 50px, esto los junta en compu */
+    }
+}
+
