@@ -1419,3 +1419,9 @@ p {
   overflow-wrap: normal;
   white-space: normal;
 }
+
+h1, h2, h3, h4, p, span {
+    hyphens: none;
+    word-break: keep-all;
+    overflow-wrap: normal;
+}
