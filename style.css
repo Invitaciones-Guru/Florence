@@ -42,12 +42,12 @@ p, h1, h2, h3, span {
    2. ESTILOS GENERALES
    ========================================= */
 :root {
-    --bg-cream: #f3ece8;
-    --green-forest: #a7b3a7;
-    --green-dark: #d8bfb3;
-    --brown-gold: #67323c;
-    --text-dark: #67323c;
-    --wax-red: #67323c;
+    --bg-cream: #ddd7d7;
+    --green-forest: #dbc2c2;
+    --green-dark: #aa8481;
+    --brown-gold: #959982;
+    --text-dark: #959982;
+    --wax-red: #ccc7bc;
 }
 
 html { scroll-behavior: smooth; }
