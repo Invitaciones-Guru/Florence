@@ -1425,3 +1425,19 @@ h1, h2, h3, h4, p, span {
     word-break: keep-all;
     overflow-wrap: normal;
 }
+
+/* =========================================
+   ESTILO PARA ICONOS DE REGALOS (PNG)
+   ========================================= */
+
+.custom-gift-icon {
+    width: 60px;          /* Un tamaño elegante para que destaquen */
+    height: 60px;
+    object-fit: contain;  /* Para que no se deformen */
+    display: inline-block;
+    
+    /* Opcional: Si tus iconos son negros y los quieres hacer dorados,
+       descomenta la siguiente línea quitando las diagonales y asteriscos */
+    /* filter: invert(20%) sepia(19%) saturate(3832%) hue-rotate(316deg) brightness(96%) contrast(96%); */
+}
+
