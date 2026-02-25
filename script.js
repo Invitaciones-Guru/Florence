@@ -91,3 +91,13 @@ function copyText(text) {
     navigator.clipboard.writeText(text).then(() => alert("Datos bancarios copiados"));
 }
 
+
+document.getElementById('rsvpForm').onsubmit = (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById('guestName').value;
+    const asistencia = document.getElementById('attendance').value;
+    const personas = document.getElementById('numGuests').value;
+    const status = asistencia === "si" ? "CONFIRMADO ✅" : "NO ASISTIRÁ ❌";
+    const msg = `Hola Kenya y David, soy ${nombre}.\nRSVP: ${status}\nPersonas: ${personas}`;
+    window.open(`https://wa.me/528115999331?text=${encodeURIComponent(msg)}`, '_blank');
+};
