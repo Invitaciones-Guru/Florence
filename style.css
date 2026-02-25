@@ -1400,3 +1400,17 @@ footer {
     display: block;
 }
 
+
+/* =========================================
+   ESTILO ALTERNO PARA FOTOS DE HISTORIA
+   ========================================= */
+
+.story-meme-img.alt-rotate {
+    transform: rotate(3deg); /* Inclinación a la derecha */
+}
+
+/* Efecto hover específico para las que están rotadas a la derecha */
+.story-meme-img.alt-rotate:hover {
+    transform: rotate(0deg) scale(1.05); /* Se enderezan igual que las otras */
+}
+
