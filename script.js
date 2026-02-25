@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // INICIALIZAR SWIPER (SLIDER PADRINOS)
+        // INICIALIZAR SWIPER (SLIDER PADRINOS)
     var swiper = new Swiper(".mySwiper", {
         effect: "coverflow",
         grabCursor: true,
@@ -65,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             modifier: 1,
             slideShadows: false,
         },
-        loop: true,
+        loop: false, // <-- APAGAMOS EL CICLO INFINITO
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -73,14 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
-        },
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
+        }
+        // Quitamos el autoplay para que tú lo muevas a tu ritmo
     });
-});
 
+    
 // CONTADOR
 const timer = setInterval(function() {
     const now = new Date().getTime();
