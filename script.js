@@ -4,37 +4,47 @@ const weddingDate = new Date("Apr 11, 2026 11:30:00").getTime();
 const iconPlay = '<svg class="icon-svg-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
 const iconPause = '<svg class="icon-svg-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
 
-// --- FUNCIÓN PARA ABRIR LA CARTA (ONCLICK) ---
-function abrirInvitacion() {
-    const overlay = document.getElementById('envelope-overlay');
-    const music = document.getElementById('weddingMusic');
-    const musicBtn = document.getElementById('musicBtn');
-    
-    // Agrega la clase para animar hacia arriba
-    overlay.classList.add('opened');
-    
-    // Intentar reproducir música
-    music.play().then(() => {
-        musicBtn.innerHTML = iconPause;
-        musicBtn.classList.add('pulse-animation');
-    }).catch(e => {
-        console.log("Autoplay bloqueado por el navegador");
-    });
-
-    // Iniciar animaciones AOS un poco después de abrir
-    setTimeout(() => { AOS.init({ duration: 1200, easing: 'ease-out-cubic', once: true, offset: 100 }); }, 600);
-}
-
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // INICIAR ANIMACIONES AOS
+    AOS.init({ duration: 1200, easing: 'ease-out-cubic', once: true, offset: 100 });
+
     const music = document.getElementById('weddingMusic');
     const musicBtn = document.getElementById('musicBtn');
+    let musicStarted = false;
 
-    // CONTROL MÚSICA BOTÓN
-    musicBtn.addEventListener('click', () => {
+    // --- TRUCO: REPRODUCIR AL PRIMER TOQUE O DESLIZAMIENTO ---
+    function startMusicPlay() {
+        if (!musicStarted) {
+            music.play().then(() => {
+                musicStarted = true;
+                musicBtn.innerHTML = iconPause;
+                musicBtn.classList.add('pulse-animation');
+                
+                // Una vez que empieza, quitamos los detectores para que no se repita
+                window.removeEventListener('scroll', startMusicPlay);
+                window.removeEventListener('touchstart', startMusicPlay);
+                document.body.removeEventListener('click', startMusicPlay);
+            }).catch(e => {
+                console.log("El navegador pide un toque más fuerte para iniciar.");
+            });
+        }
+    }
+
+    // Escuchamos si el invitado hace scroll, toca o da clic en cualquier lado
+    window.addEventListener('scroll', startMusicPlay, { passive: true });
+    window.addEventListener('touchstart', startMusicPlay, { passive: true });
+    document.body.addEventListener('click', startMusicPlay, { passive: true });
+
+
+    // CONTROL MANUAL DEL BOTÓN (Por si la quieren pausar o el navegador bloqueó el inicio)
+    musicBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evita conflictos con el clic general
         if (music.paused) {
             music.play();
             musicBtn.innerHTML = iconPause;
             musicBtn.classList.add('pulse-animation');
+            musicStarted = true;
         } else {
             music.pause();
             musicBtn.innerHTML = iconPlay;
@@ -42,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // --- INICIALIZAR SWIPER (SLIDER PADRINOS) ---
+    // INICIALIZAR SWIPER (SLIDER PADRINOS)
     var swiper = new Swiper(".mySwiper", {
         effect: "coverflow",
         grabCursor: true,
@@ -71,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// CONTADOR
 const timer = setInterval(function() {
     const now = new Date().getTime();
     const distance = weddingDate - now;
@@ -87,11 +98,12 @@ const timer = setInterval(function() {
     if (distance < 0) { clearInterval(timer); document.getElementById("countdown").innerHTML = "¡ES HOY!"; }
 }, 1000);
 
+// COPIAR CLABE
 function copyText(text) {
     navigator.clipboard.writeText(text).then(() => alert("Datos bancarios copiados"));
 }
 
-
+// RSVP WHATSAPP
 document.getElementById('rsvpForm').onsubmit = (e) => {
     e.preventDefault();
     const nombre = document.getElementById('guestName').value;
