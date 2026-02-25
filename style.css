@@ -1458,3 +1458,16 @@ h1, h2, h3, h4, p, span {
     }
 }
 
+/* =========================================
+   NOTA DEL CÓDIGO DE VESTIMENTA (ALBERCA)
+   ========================================= */
+
+.dress-code-note {
+    font-size: 0.85rem;    /* Letra un poco más pequeña para que sea una nota secundaria */
+    color: #666;           /* Un gris elegante que contrasta con el título */
+    text-align: center;
+    line-height: 1.6;      /* Espacio entre las líneas para que respire */
+    margin: 10px 0 15px 0; /* Margen para separarlo del título y del botón */
+    max-width: 90%;        /* Evita que el texto llegue hasta las orillas */
+}
+
