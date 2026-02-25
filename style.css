@@ -1414,3 +1414,8 @@ footer {
     transform: rotate(0deg) scale(1.05); /* Se enderezan igual que las otras */
 }
 
+p {
+  word-break: normal;
+  overflow-wrap: normal;
+  white-space: normal;
+}
